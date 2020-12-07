@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ru.s.pizza.models.food</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1352.0">ru.s.pizza.models.food.Seller</node>
+    <node x="662.0" y="959.0">ru.s.pizza.models.food.IConfigurationStrategy</node>
+    <node x="464.25" y="-30.909090909090878">ru.s.pizza.models.food.Food</node>
+    <node x="901.0" y="580.0">ru.s.pizza.models.food.Drink</node>
+    <node x="527.0" y="1062.0">ru.s.pizza.models.food.DrinkConfigurationStrategy</node>
+    <node x="766.0" y="1062.0">ru.s.pizza.models.food.PizzaConfigurationStrategy</node>
+    <node x="209.0" y="1276.0">ru.s.pizza.models.food.Buyer</node>
+    <node x="0.0" y="559.0">ru.s.pizza.models.food.Order</node>
+    <node x="125.5" y="959.0">ru.s.pizza.models.food.Person</node>
+    <node x="1026.0" y="959.0">ru.s.pizza.models.food.CollectionHelp</node>
+    <node x="579.0" y="515.0">ru.s.pizza.models.food.Dessert</node>
+    <node x="276.0" y="515.0">ru.s.pizza.models.food.Pizza</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ru.s.pizza.models.food.PizzaConfigurationStrategy" target="ru.s.pizza.models.food.IConfigurationStrategy">
+      <point x="0.0" y="-89.5" />
+      <point x="873.5" y="1037.0" />
+      <point x="801.5" y="1037.0" />
+      <point x="46.5" y="26.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.Dessert" target="ru.s.pizza.models.food.Food">
+      <point x="0.0" y="-199.5" />
+      <point x="730.0" y="495.0" />
+      <point x="601.125" y="495.0" />
+      <point x="27.375" y="232.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.Pizza" target="ru.s.pizza.models.food.Food">
+      <point x="0.0" y="-199.5" />
+      <point x="417.5" y="495.0" />
+      <point x="546.375" y="495.0" />
+      <point x="-27.375" y="232.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.Order" target="ru.s.pizza.models.food.Food">
+      <point x="0.0" y="-155.5" />
+      <point x="128.0" y="485.0" />
+      <point x="491.625" y="485.0" />
+      <point x="-82.125" y="232.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.Buyer" target="ru.s.pizza.models.food.Person">
+      <point x="0.0" y="-166.5" />
+      <point x="345.5" y="1251.0" />
+      <point x="267.25" y="1251.0" />
+      <point x="47.25" y="133.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.DrinkConfigurationStrategy" target="ru.s.pizza.models.food.IConfigurationStrategy">
+      <point x="0.0" y="-89.5" />
+      <point x="636.5" y="1037.0" />
+      <point x="708.5" y="1037.0" />
+      <point x="-46.5" y="26.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.Seller" target="ru.s.pizza.models.food.Person">
+      <point x="0.0" y="-90.5" />
+      <point x="94.5" y="1251.0" />
+      <point x="172.75" y="1251.0" />
+      <point x="-47.25" y="133.5" />
+    </edge>
+    <edge source="ru.s.pizza.models.food.Drink" target="ru.s.pizza.models.food.Food">
+      <point x="0.0" y="-134.5" />
+      <point x="1040.0" y="485.0" />
+      <point x="655.875" y="485.0" />
+      <point x="82.125" y="232.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1" x="560.121212121212" y="260.7424242424242" />
+  <SelectedNodes>
+    <node>ru.s.pizza.models.food.Food</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

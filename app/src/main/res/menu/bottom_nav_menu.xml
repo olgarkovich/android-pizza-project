@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/food"
+        android:icon="@drawable/icon_food_50"
+        android:title="@string/food" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/icon_man_50"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/contacts"
+        android:icon="@drawable/icon_contacts_50"
+        android:title="@string/contacts" />
+
+    <item
+        android:id="@+id/basket"
+        android:icon="@drawable/icon_basket_50"
+        android:title="@string/basket"/>
+
+</menu>

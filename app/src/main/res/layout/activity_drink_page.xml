@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:layout_height="match_parent"
+    tools:context=".DrinkPageActivity">
+
+    <TextView
+        android:id="@+id/name_drink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        android:textColor="@color/colorDarkText"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+
+    <ImageView
+        android:id="@+id/image_drink"
+        android:layout_width="293dp"
+        android:layout_height="293dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dr1" />
+
+    <Button
+        android:id="@+id/_0_5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="182dp"
+        android:background="@color/colorPrimaryLight"
+        android:onClick="button05"
+        android:text="@string/_0_5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+
+    <Button
+        android:onClick="button1"
+        android:id="@+id/_1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="182dp"
+        android:text="@string/_1"
+        android:background="@color/colorButton"
+        app:layout_constraintStart_toEndOf="@+id/_0_5"
+        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+
+    <Button
+        android:onClick="button15"
+        android:id="@+id/_1_5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="182dp"
+        android:text="@string/_1_5"
+        android:background="@color/colorButton"
+        app:layout_constraintStart_toEndOf="@+id/_1"
+        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+
+    <Button
+        android:onClick="button2"
+        android:id="@+id/_2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="184dp"
+        android:text="@string/_2"
+        android:background="@color/colorButton"
+        app:layout_constraintStart_toEndOf="@+id/_1_5"
+        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+
+    <Button
+        android:id="@+id/drink_to_order"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_frame"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryLight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
