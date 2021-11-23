@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimaryLight"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
     tools:context=".DrinkPageActivity">
 
     <TextView
@@ -41,46 +41,46 @@
         app:layout_constraintTop_toBottomOf="@+id/image_drink" />
 
     <Button
-        android:onClick="button1"
         android:id="@+id/_1"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="182dp"
-        android:text="@string/_1"
         android:background="@color/colorButton"
+        android:onClick="button1"
+        android:text="@string/_1"
         app:layout_constraintStart_toEndOf="@+id/_0_5"
         app:layout_constraintTop_toBottomOf="@+id/image_drink" />
 
     <Button
-        android:onClick="button15"
         android:id="@+id/_1_5"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="182dp"
-        android:text="@string/_1_5"
         android:background="@color/colorButton"
+        android:onClick="button15"
+        android:text="@string/_1_5"
         app:layout_constraintStart_toEndOf="@+id/_1"
         app:layout_constraintTop_toBottomOf="@+id/image_drink" />
 
     <Button
-        android:onClick="button2"
         android:id="@+id/_2"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="184dp"
-        android:text="@string/_2"
         android:background="@color/colorButton"
+        android:onClick="button2"
+        android:text="@string/_2"
         app:layout_constraintStart_toEndOf="@+id/_1_5"
         app:layout_constraintTop_toBottomOf="@+id/image_drink" />
 
     <Button
         android:id="@+id/drink_to_order"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_margin="32dp"
         android:background="@drawable/button_frame"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryLight"

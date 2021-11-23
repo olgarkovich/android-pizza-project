@@ -18,8 +18,9 @@
 
     <Button
         android:id="@+id/order"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
         android:background="@drawable/button_frame"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryLight"

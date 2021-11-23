@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pizza_item_view"
     android:layout_width="match_parent"
@@ -10,9 +11,9 @@
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rl_pizza"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryLight">
 
@@ -20,53 +21,53 @@
             android:id="@+id/picture_pizza_list"
             android:layout_width="133dp"
             android:layout_height="133dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/name_pizza_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/picture_pizza_list"
+            android:layout_margin="16dp"
             android:text="@string/a1"
-            android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/colorDarkText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/picture_pizza_list"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/full_names" />
 
         <TextView
             android:id="@+id/description_pizza_list"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/name_pizza_list"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@+id/picture_pizza_list"
+            android:layout_margin="16dp"
             android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/picture_pizza_list"
+            app:layout_constraintTop_toBottomOf="@+id/name_pizza_list"
             tools:text="@tools:sample/full_names" />
 
         <TextView
             android:id="@+id/price_pizza_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/description_pizza_list"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="12dp"
-            android:layout_toEndOf="@+id/picture_pizza_list"
+            android:layout_margin="16dp"
             android:background="@drawable/text_view_frame"
             android:textColor="@color/colorPrimaryButton"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/picture_pizza_list"
+            app:layout_constraintTop_toBottomOf="@+id/description_pizza_list"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="@tools:sample/full_names" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

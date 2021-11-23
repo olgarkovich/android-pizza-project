@@ -24,12 +24,13 @@
         android:id="@+id/add_pizza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginBottom="44dp"
         android:background="@drawable/button_frame"
         android:text="@string/piz"
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toTopOf="@+id/add_fragment_holder"
+        app:layout_constraintEnd_toStartOf="@+id/add_dessert"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,6 +44,8 @@
         android:text="@string/dessert"
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toTopOf="@+id/add_fragment_holder"
+        app:layout_constraintEnd_toStartOf="@+id/add_drink"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/add_pizza"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +59,8 @@
         android:text="@string/dr"
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toTopOf="@+id/add_fragment_holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/add_dessert"
         app:layout_constraintTop_toTopOf="parent" />
 

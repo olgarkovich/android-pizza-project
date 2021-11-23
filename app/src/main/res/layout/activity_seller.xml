@@ -59,8 +59,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/personal_dt"
-        android:textSize="20sp"
         android:textColor="@color/colorDarkText"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,8 +69,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Добавить позицию в меню"
         android:background="@drawable/third_btn"
+        android:text="Добавить позицию в меню"
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,8 +81,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Посмотреть статистику"
         android:background="@drawable/third_btn"
+        android:text="Посмотреть статистику"
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,9 +110,9 @@
         android:text="@string/change"
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
-        app:layout_constraintStart_toEndOf="@+id/another_profile_seller" />
+        app:layout_constraintEnd_toStartOf="@+id/another_profile_seller"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/another_profile_seller"
@@ -124,8 +124,8 @@
         android:textColor="@color/colorPrimaryLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/change_seller_button" />
 
     <EditText
         android:id="@+id/seller_name"
@@ -134,10 +134,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:enabled="false"
         android:inputType="textPersonName"
         android:text="null"
         android:textColor="@color/colorDarkText"
-        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/inform" />
 
@@ -148,10 +148,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:enabled="false"
         android:inputType="phone"
         android:text="null"
         android:textColor="@color/colorDarkText"
-        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/seller_name" />
 
@@ -162,10 +162,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:enabled="false"
         android:inputType="textPersonName"
         android:text="null"
         android:textColor="@color/colorDarkText"
-        android:enabled="false"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/seller_phone" />
 

@@ -42,9 +42,9 @@
 
     <Button
         android:id="@+id/dessert_to_order"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_margin="32dp"
         android:background="@drawable/button_frame"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryLight"

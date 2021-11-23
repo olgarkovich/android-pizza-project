@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_add_position.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_complete.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_dessert_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_drink_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_pizza_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_profile_change.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_seller.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_add_pizza.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_basket.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/item_list_dessert.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/item_list_drink.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/item_list_order.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/item_list_pizza.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

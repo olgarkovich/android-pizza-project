@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/order_item_view"
     android:layout_width="match_parent"
@@ -10,9 +11,9 @@
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rl_order"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryLight">
 
@@ -20,167 +21,75 @@
             android:id="@+id/order_picture"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/order_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_toEndOf="@+id/order_picture"
-            android:textAlignment="center"
+            android:layout_margin="16dp"
             android:textColor="@color/colorDarkText"
             android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/order_picture"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/full_names" />
 
         <Button
             android:id="@+id/button_minus"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/order_name"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/order_picture"
             android:background="@drawable/button_frame"
             android:onClick="minusClick"
             android:text="@string/minus"
             android:textColor="@color/colorPrimaryLight"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/order_count"
+            app:layout_constraintStart_toEndOf="@+id/order_picture"
+            app:layout_constraintTop_toBottomOf="@+id/order_name" />
 
         <Button
             android:id="@+id/button_plus"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/order_name"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/order_count"
             android:background="@drawable/button_frame"
             android:onClick="plusClick"
             android:text="@string/plus"
             android:textColor="@color/colorPrimaryLight"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/order_price"
+            app:layout_constraintStart_toEndOf="@+id/order_count"
+            app:layout_constraintTop_toBottomOf="@+id/order_name" />
 
         <TextView
             android:id="@+id/order_count"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/order_name"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/button_minus"
             android:gravity="center"
             android:text="0"
-            android:textAlignment="center"
             android:textColor="@color/colorDarkText"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_plus"
+            app:layout_constraintStart_toEndOf="@+id/button_minus"
+            app:layout_constraintTop_toBottomOf="@+id/order_name" />
 
         <TextView
             android:id="@+id/order_price"
             android:layout_width="110dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/order_name"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_toEndOf="@+id/button_plus"
             android:gravity="center"
             android:text="19,10 pyb."
-            android:textAlignment="center"
             android:textColor="@color/colorDarkText"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_plus"
+            app:layout_constraintTop_toBottomOf="@+id/order_name" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
-<!--<androidx.constraintlayout.widget.ConstraintLayout-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent">-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/order_picture"-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="120dp"-->
-<!--        android:layout_marginStart="15dp"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/a1" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/order_name"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="25dp"-->
-<!--        android:text="@string/name"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/colorDarkText"-->
-<!--        android:textSize="24sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/order_picture"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/button_minus"-->
-<!--        android:layout_width="40dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/button_frame"-->
-<!--        android:onClick="minusClick"-->
-<!--        android:text="@string/minus"-->
-<!--        android:textColor="@color/colorPrimaryLight"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/order_picture"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/order_name" />-->
-
-<!--    <Button-->
-<!--        android:onClick="plusClick"-->
-<!--        android:id="@+id/button_plus"-->
-<!--        android:layout_width="40dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:text="@string/plus"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textColor="@color/colorPrimaryLight"-->
-<!--        android:background="@drawable/button_frame"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/order_count"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/order_name" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/order_count"-->
-<!--        android:layout_width="40dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:text="0"-->
-<!--        android:gravity="center"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/colorDarkText"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/button_minus"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/order_name" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/order_price"-->
-<!--        android:layout_width="110dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="10dp"-->
-<!--        android:gravity="center"-->
-<!--        android:text="19,10 pyb."-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/colorDarkText"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/button_plus"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/order_name" />-->
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
