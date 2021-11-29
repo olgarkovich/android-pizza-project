@@ -32,49 +32,53 @@
         android:id="@+id/_0_5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="182dp"
         android:background="@color/colorPrimaryLight"
         android:onClick="button05"
         android:text="@string/_0_5"
+        app:layout_constraintBottom_toTopOf="@+id/drink_to_order"
+        app:layout_constraintEnd_toStartOf="@+id/_1"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+        app:layout_constraintTop_toBottomOf="@+id/name_drink" />
 
     <Button
         android:id="@+id/_1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="182dp"
         android:background="@color/colorButton"
         android:onClick="button1"
         android:text="@string/_1"
+        app:layout_constraintBottom_toTopOf="@+id/drink_to_order"
+        app:layout_constraintEnd_toStartOf="@+id/_1_5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_0_5"
-        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+        app:layout_constraintTop_toBottomOf="@+id/name_drink" />
 
     <Button
         android:id="@+id/_1_5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="182dp"
         android:background="@color/colorButton"
         android:onClick="button15"
         android:text="@string/_1_5"
+        app:layout_constraintBottom_toTopOf="@+id/drink_to_order"
+        app:layout_constraintEnd_toStartOf="@+id/_2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_1"
-        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+        app:layout_constraintTop_toBottomOf="@+id/name_drink" />
 
     <Button
         android:id="@+id/_2"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="184dp"
         android:background="@color/colorButton"
         android:onClick="button2"
         android:text="@string/_2"
+        app:layout_constraintBottom_toTopOf="@+id/drink_to_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/_1_5"
-        app:layout_constraintTop_toBottomOf="@+id/image_drink" />
+        app:layout_constraintTop_toBottomOf="@+id/name_drink" />
 
     <Button
         android:id="@+id/drink_to_order"

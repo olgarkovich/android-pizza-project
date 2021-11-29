@@ -10,8 +10,11 @@
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_pizza_page.xml" value="0.25416666666666665" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_profile_change.xml" value="0.25416666666666665" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/activity_seller.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_add_dessert.xml" value="0.2" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_add_drink.xml" value="0.196875" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_add_pizza.xml" value="0.25416666666666665" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_basket.xml" value="0.25416666666666665" />
+        <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_drink.xml" value="0.196875" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/item_list_dessert.xml" value="0.25416666666666665" />
         <entry key="..\:/labs/android-pizza-project/app/src/main/res/layout/item_list_drink.xml" value="0.25416666666666665" />

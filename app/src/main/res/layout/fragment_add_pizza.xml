@@ -19,11 +19,12 @@
 
     <EditText
         android:id="@+id/add_name_pizza"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -39,11 +40,12 @@
 
     <EditText
         android:id="@+id/add_price_pizza_l"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginHorizontal="24dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -59,11 +61,12 @@
 
     <EditText
         android:id="@+id/add_weight_pizza_l"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -79,11 +82,12 @@
 
     <EditText
         android:id="@+id/add_ingredient_pizza"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -99,11 +103,12 @@
 
     <EditText
         android:id="@+id/add_image_pizza"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 

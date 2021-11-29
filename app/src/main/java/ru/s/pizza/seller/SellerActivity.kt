@@ -42,6 +42,7 @@ class SellerActivity : AppCompatActivity() {
                 mail.isEnabled = false
                 anotherProfile.visibility = View.VISIBLE
                 addPosition.visibility = View.VISIBLE
+                showComplete.visibility = View.VISIBLE
 
                 seller.name = name.text.toString()
                 seller.phone = phone.text.toString()
@@ -55,6 +56,7 @@ class SellerActivity : AppCompatActivity() {
                 mail.isEnabled = true
                 anotherProfile.visibility = View.INVISIBLE
                 addPosition.visibility = View.INVISIBLE
+                showComplete.visibility = View.INVISIBLE
             }
         }
 
