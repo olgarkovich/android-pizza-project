@@ -8,6 +8,9 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_dessert_page.*
 import ru.s.pizza.models.food.Dessert
 import ru.s.pizza.models.FeedReaderDbHelper
+import ru.s.pizza.models.PizzaLog
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DessertPageActivity : AppCompatActivity() {
     var dessert: Dessert =
@@ -35,6 +38,11 @@ class DessertPageActivity : AppCompatActivity() {
             val db = FeedReaderDbHelper(applicationContext)
             val code = db.readBuyerCode()
             db.insertData(dessert, code)
+
+            val pref = PrefManager(this)
+            val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.getDefault())
+            db.writePizzaLog(PizzaLog(sdf.format(Date()), pref.getLogin(), "Добавлен десерт в корзину"))
+
             db.close()
         }
     }

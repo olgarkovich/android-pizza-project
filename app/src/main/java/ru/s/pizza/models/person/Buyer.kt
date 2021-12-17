@@ -18,6 +18,23 @@ class Buyer() : Person() {
         this.code = code
     }
 
+    constructor (name: String, phone: String, mail: String,
+                 birth: String, address: String, code: Int, login: String, password: String) : this() {
+        this.name = name
+        this.phone = phone
+        this.mail = mail
+        this.birth = birth
+        this.address = address
+        this.code = code
+        this.login = login
+        this.password = password
+    }
+
+    constructor (login: String, password: String) : this() {
+        this.login = login
+        this.password = password
+    }
+
     override fun writeToParcel(out: Parcel, flags: Int) {
         out.writeString(name)
         out.writeString(phone)
@@ -25,6 +42,8 @@ class Buyer() : Person() {
         out.writeString(birth)
         out.writeString(address)
         out.writeInt(code)
+        out.writeString(login)
+        out.writeString(password)
     }
 
     override fun describeContents(): Int {
@@ -39,8 +58,10 @@ class Buyer() : Person() {
             val birth: String = parcel.readString().toString()
             val address: String = parcel.readString().toString()
             val code: Int = parcel.readInt()
+            val login = parcel.readString().toString()
+            val password = parcel.readString().toString()
             return Buyer(
-                name, phone, mail, birth, address, code
+                name, phone, mail, birth, address, code, login, password
             )
         }
 

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import ru.s.pizza.PrefManager
 import ru.s.pizza.R
 import ru.s.pizza.models.food.*
 import ru.s.pizza.models.person.Buyer
@@ -106,6 +107,8 @@ class FeedReaderDbHelper(var context: Context) : SQLiteOpenHelper(context,
     }
 
     fun updateData(buyer: Buyer) {
+        val pref = PrefManager(context)
+
         val db = this.writableDatabase
         val cv = ContentValues()
         cv.put("name", buyer.name)
@@ -114,8 +117,9 @@ class FeedReaderDbHelper(var context: Context) : SQLiteOpenHelper(context,
         cv.put("birth", buyer.birth)
         cv.put("address", buyer.address)
         cv.put("code", buyer.code.toString())
+        cv.put("password", pref.getPasswordHash())
 
-        db.update("Buyer", cv,"id = ?", arrayOf(1.toString()))
+        db.update("Buyer", cv,"login = ?", arrayOf(buyer.login))
     }
 
     fun readBuyerCode(): Int {
@@ -144,12 +148,12 @@ class FeedReaderDbHelper(var context: Context) : SQLiteOpenHelper(context,
         db.update("OrderList", cv, "code = ?", arrayOf(0.toString()))
     }
 
-    fun updateBuyerCode(code: Int) {
+    fun updateBuyerCode(code: Int, login: String) {
         val db = this.writableDatabase
         val cv = ContentValues()
         cv.put("code", code.toString())
 
-        db.update("Buyer", cv, "code = ?", arrayOf(0.toString()))
+        db.update("Buyer", cv, "code = ? AND login = ?", arrayOf(0.toString(), login))
     }
 
     private fun checkFoodCode(order: Food, code: Int): Boolean {
@@ -229,17 +233,19 @@ class FeedReaderDbHelper(var context: Context) : SQLiteOpenHelper(context,
         }
     }
 
-    fun readSeller (): Seller {
+    fun readSeller(login: String): Seller {
         val seller = Seller()
         val myDatabase = context.let { FeedReaderDbHelper(it).readableDatabase }
-        val query = "SELECT id, name, phone, mail FROM Seller"
-        val m: Array<out String> = arrayOf()
+        val query = "SELECT id, name, phone, mail, login, password FROM Seller WHERE login = ?"
+        val m: Array<out String> = arrayOf(login)
         val mCur = myDatabase.rawQuery(query, m)
         if(mCur?.moveToFirst() == true) {
             do {
                 seller.name = mCur.getString(mCur.getColumnIndex("name"))
                 seller.phone = mCur.getString(mCur.getColumnIndex("phone"))
                 seller.mail = mCur.getString(mCur.getColumnIndex("mail"))
+                seller.login = mCur.getString(mCur.getColumnIndex("login"))
+                seller.password = mCur.getString(mCur.getColumnIndex("password"))
             } while (mCur.moveToNext())
         }
         mCur?.close()
@@ -249,13 +255,16 @@ class FeedReaderDbHelper(var context: Context) : SQLiteOpenHelper(context,
     }
 
     fun updateSeller (seller: Seller) {
+        val pref = PrefManager(context)
+
         val db = this.writableDatabase
         val cv = ContentValues()
         cv.put("name", seller.name)
         cv.put("phone", seller.phone)
         cv.put("mail", seller.mail)
+        cv.put("password", pref.getPasswordHash())
 
-        db.update("Seller", cv, "id = ?", arrayOf(1.toString()))
+        db.update("Seller", cv, "login = ?", arrayOf(pref.getLogin()))
     }
 
     fun readCompleteOrders(): ArrayList<Order> {
@@ -393,5 +402,91 @@ class FeedReaderDbHelper(var context: Context) : SQLiteOpenHelper(context,
         myDatabase.close()
 
         return listDessert
+    }
+
+    fun readBuyer(login: String): Buyer {
+        val buyer = Buyer()
+        val myDatabase = context.let { FeedReaderDbHelper(it).readableDatabase }
+        val query = "SELECT id, name, phone, mail, birth, address, code, login, password FROM Buyer WHERE login = ?"
+        val m: Array<out String> = arrayOf(login)
+        val mCur = myDatabase.rawQuery(query, m)
+
+        if (mCur?.moveToFirst() == true) {
+            do {
+                buyer.name = mCur.getString(mCur.getColumnIndex("name"))
+                buyer.phone = mCur.getString(mCur.getColumnIndex("phone"))
+                buyer.mail = mCur.getString(mCur.getColumnIndex("mail"))
+                buyer.birth = mCur.getString(mCur.getColumnIndex("birth"))
+                buyer.address = mCur.getString(mCur.getColumnIndex("address"))
+                buyer.code = mCur.getString(mCur.getColumnIndex("code")).toInt()
+                buyer.login = mCur.getString(mCur.getColumnIndex("login"))
+                buyer.password = mCur.getString(mCur.getColumnIndex("password"))
+            } while (mCur.moveToNext())
+        }
+        mCur?.close()
+        myDatabase.close()
+
+        return buyer
+    }
+
+    fun writeBuyer (buyer: Buyer) {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+        cv.put("name", buyer.name)
+        cv.put("phone", buyer.phone)
+        cv.put("mail", buyer.mail)
+        cv.put("birth", buyer.birth)
+        cv.put("address", buyer.address)
+        cv.put("code", buyer.code.toString())
+        cv.put("login", buyer.login)
+        cv.put("password", buyer.password)
+
+        db.insert("Buyer", null, cv)
+    }
+
+    fun writeSeller (seller: Seller) {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+        cv.put("name", seller.name)
+        cv.put("phone", seller.phone)
+        cv.put("mail", seller.mail)
+        cv.put("login", seller.login)
+        cv.put("password", seller.password)
+
+        db.insert("Seller", null, cv)
+    }
+
+    fun writePizzaLog (log: PizzaLog) {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+        cv.put("time", log.time)
+        cv.put("login", log.login)
+        cv.put("action", log.action)
+
+        db.insert("Log", null, cv)
+    }
+
+    fun readPizzaLogs(): ArrayList<PizzaLog> {
+        val logs = ArrayList<PizzaLog>()
+        val myDatabase = context.let { FeedReaderDbHelper(it).readableDatabase }
+        val query = "SELECT id, time, login, action FROM Log"
+        val m: Array<out String> = arrayOf()
+        val mCurD = myDatabase.rawQuery(query, m)
+
+        if(mCurD?.moveToFirst() == true) {
+            var index = 0
+            do {
+                val time = mCurD.getString(mCurD.getColumnIndex("time"))
+                val login = mCurD.getString(mCurD.getColumnIndex("login"))
+                val action = mCurD.getString(mCurD.getColumnIndex("action"))
+                val p = PizzaLog(time, login, action)
+                index += 1
+                logs.add(p)
+            } while (mCurD.moveToNext())
+        }
+        mCurD?.close()
+        myDatabase.close()
+
+        return logs
     }
 }

@@ -7,6 +7,8 @@ abstract class Person : Parcelable {
     var name: String = ""
     var phone: String = ""
     var mail: String = ""
+    var login: String = ""
+    var password: String = ""
 
     override fun writeToParcel(out: Parcel, flags: Int) {
         out.writeString(name)

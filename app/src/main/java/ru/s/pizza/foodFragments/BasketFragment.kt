@@ -14,10 +14,14 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import ru.s.pizza.PrefManager
 import ru.s.pizza.R
 import ru.s.pizza.foodAdapters.OrderAdapter
 import ru.s.pizza.models.*
 import ru.s.pizza.models.food.Order
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class BasketFragment : Fragment() {
     lateinit var notificationManager: NotificationManager
@@ -90,6 +94,10 @@ class BasketFragment : Fragment() {
                     .setContentIntent(pendingIntent)
 
                 notificationManager.notify(1234, builder.build())
+
+                val pref = PrefManager(requireContext())
+                val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.getDefault())
+                db.writePizzaLog(PizzaLog(sdf.format(Date()), pref.getLogin(), "Пользователь сделал заказ"))
             }
             else {
                 orderButton.text = "Оформить заказ за ${checkCost} руб."

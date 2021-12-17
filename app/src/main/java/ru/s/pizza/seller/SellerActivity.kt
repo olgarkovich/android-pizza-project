@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import ru.s.pizza.PrefManager
 import ru.s.pizza.R
 import ru.s.pizza.models.FeedReaderDbHelper
 import ru.s.pizza.models.person.Seller
@@ -28,7 +29,8 @@ class SellerActivity : AppCompatActivity() {
         val mail = findViewById<EditText>(R.id.seller_mail)
 
         val db = FeedReaderDbHelper(applicationContext)
-        seller = db.readSeller()
+        val pref = PrefManager(this)
+        seller = db.readSeller(pref.getLogin())
 
         name.setText(seller.name)
         phone.setText(seller.phone)
@@ -61,8 +63,8 @@ class SellerActivity : AppCompatActivity() {
         }
 
         anotherProfile?.setOnClickListener {
-            val dialogFragment = CustomDialogFragment("Владелец")
-            fragmentManager?.let { dialogFragment.show(supportFragmentManager, "ssss") }
+            val intent = Intent(this, LogActivity::class.java)
+            startActivity(intent)
         }
 
         addPosition.setOnClickListener {

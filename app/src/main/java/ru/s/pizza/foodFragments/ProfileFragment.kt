@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import ru.s.pizza.PrefManager
 import ru.s.pizza.ProfileChangeActivity
 import ru.s.pizza.R
 import ru.s.pizza.models.FeedReaderDbHelper
@@ -38,9 +39,11 @@ class ProfileFragment : Fragment() {
         val changeProfile = view?.findViewById<Button>(R.id.change_profile_button)
         val anotherProfile = view?.findViewById<Button>(R.id.another_profile)
 
+        val pref = PrefManager(requireContext())
+        buyer.login = pref.getLogin()
         val myDatabase = context?.let { FeedReaderDbHelper(it).readableDatabase }
-        val query = "SELECT id, name, phone, mail, birth, address, code FROM Buyer"
-        val m: Array<out String> = arrayOf()
+        val query = "SELECT id, name, phone, mail, birth, address, code FROM Buyer WHERE login = ?"
+        val m: Array<out String> = arrayOf(buyer.login)
         val mCur = myDatabase?.rawQuery(query, m)
 
         var codeDB = 0
@@ -74,7 +77,7 @@ class ProfileFragment : Fragment() {
             )
             val db = context?.let { FeedReaderDbHelper(it) }
             db?.updateOrderCode(codeDB)
-            db?.updateBuyerCode(codeDB)
+            db?.updateBuyerCode(codeDB, buyer.login)
         }
         else {
             message.visibility = View.INVISIBLE

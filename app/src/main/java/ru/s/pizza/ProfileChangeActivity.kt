@@ -9,7 +9,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import ru.s.pizza.models.FeedReaderDbHelper
+import ru.s.pizza.models.PizzaLog
 import ru.s.pizza.models.person.Buyer
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ProfileChangeActivity : AppCompatActivity() {
     var buyer = Buyer()
@@ -39,13 +42,21 @@ class ProfileChangeActivity : AppCompatActivity() {
                 message.visibility = View.VISIBLE
             }
             else {
+
                 val buyer = Buyer(
                     name.text.toString(), phone.text.toString(), mail.text.toString(),
                     birth.text.toString(), address.text.toString(), buyer.code
                 )
+
+                val pref = PrefManager(this)
+                buyer.login = pref.getLogin()
+
                 val db = FeedReaderDbHelper(applicationContext)
                 db.updateData(buyer)
+                val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.getDefault())
+                db.writePizzaLog(PizzaLog(sdf.format(Date()), pref.getLogin(), "Изменена информация пользователя"))
                 val intent = Intent()
+
                 intent.putExtra("Buyer", buyer)
                 setResult(Activity.RESULT_OK, intent)
                 finish()

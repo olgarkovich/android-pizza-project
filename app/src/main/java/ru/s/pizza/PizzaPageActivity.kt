@@ -3,13 +3,17 @@ package ru.s.pizza
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_pizza_page.*
 import ru.s.pizza.models.FeedReaderDbHelper
+import ru.s.pizza.models.PizzaLog
 import ru.s.pizza.models.food.Pizza
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PizzaPageActivity : AppCompatActivity() {
     var pizza: Pizza =
@@ -32,10 +36,14 @@ class PizzaPageActivity : AppCompatActivity() {
         imageView.setImageResource(pizza.picture)
         ingredient.text = pizza.ingredient
 
+        val pref = PrefManager(this)
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.getDefault())
+
         to_order.setOnClickListener {
             val db = FeedReaderDbHelper(applicationContext)
             val code = db.readBuyerCode()
             db.insertData(pizza, code)
+            db.writePizzaLog(PizzaLog(sdf.format(Date()), pref.getLogin(), "Добавлена пицца в корзину"))
             db.close()
         }
     }
